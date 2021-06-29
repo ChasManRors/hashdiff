@@ -10,13 +10,13 @@ describe 'hashdiff' do
   let(:answer) { { name: %w[Jill Jack], location: { city: %w[Boston Somerville] } } }
   let(:f) { Hashdiff.new }
 
-  context 'Stard - Given When Then' do
+  context 'When given two similar hashes' do
     it "has a top level hash with key :name and value ['Jill', 'Jack']" do
-      expect(%w[Jill Jack]).to eq(f.hashdiff(a, b)[:name])
+      expect(f.hashdiff(a, b)[:name]).to eq(%w[Jill Jack])
     end
 
     it 'returns expected hashdiff sequence' do
-      expect(answer).to eq f.hashdiff(a, b)
+      expect(f.hashdiff(a, b)).to eq answer
     end
   end
 end
