@@ -8,11 +8,9 @@ class Hashdiff
   def hashdiff(hash_a, hash_b)
     # binding.pry
     hash_a.keys.each_with_object({}) do |key, result|
-      if hash_a[key].is_a?(Hash)
-        result[key] = hashdiff(hash_a[key], hash_b[key])
-      elsif hash_a[key] != hash_b[key]
-        result[key] = [hash_a[key], hash_b[key]]
-      end
+      result[key] = hashdiff(hash_a[key], hash_b[key]) if hash_a[key].is_a?(Hash)
+
+      result[key] = [hash_a[key], hash_b[key]] if hash_a[key] != hash_b[key] && !hash_a[key].is_a?(Hash)
     end
   end
 end
