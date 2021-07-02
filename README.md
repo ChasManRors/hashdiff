@@ -1,4 +1,4 @@
-# Hash Diff
+# Hash Diff - LinkSquares problem from Luke Rosenfeld
 
 # Objective: Return a hash containing the difference in each hash
 
@@ -9,5 +9,5 @@ b = { name: 'Jack', role: 'Sales', location: { state: 'Massachusetts', city: 'So
 => Expected Output: { name: ['Jill', 'Jack'], location: { city: ['Boston', 'Somerville'] } }
 
 def diff(a, b)
-  
+
 end
